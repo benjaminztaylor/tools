@@ -1,6 +1,5 @@
 # assorted tools
 
-## move_files
+## Move files (script)
 
-script for moving images for multiple cameras into folders based on frame number (rather than camera number).
-
+-   moving images for multiple cameras into folders based on frame number (rather than camera number).

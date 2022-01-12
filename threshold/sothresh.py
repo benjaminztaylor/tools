@@ -9,10 +9,10 @@ if __name__ == "__main__":
         prog = "python sothresh.py <arguments>")
     parser.add_argument("-i", "--image", required = True,
         help = "Path to input image")
-    parser.add_argument("-b", "--blocksize", default = 5000, type = int,
-        help = "Maximum blocksize [DEFAULT: 5000].")
+    parser.add_argument("-b", "--blocksize", default = 4999, type = int,
+        help = "Maximum blocksize [DEFAULT: 4999].")
     parser.add_argument("-o", "--offset", default = 100, type = int,
-        help = "Maximum blocksize [DEFAULT: 100].")
+        help = "Maximum offset [DEFAULT: 100].")
     args = vars(parser.parse_args())
 
     # Collect the arguments.
@@ -37,13 +37,11 @@ if __name__ == "__main__":
     src = cv2.resize(src_gray, (640, 480))
         
 
-    # Values of trackbar as text on image for R trackbar.
     font = cv2.FONT_HERSHEY_SIMPLEX
     
     def track_adaptive_thresh(val):
 
         offset_val = cv2.getTrackbarPos(tb_offset_value, window_name)
-
         block_size = cv2.getTrackbarPos(tb_block_value, window_name)
         block_size = max(3, block_size)
         
@@ -51,6 +49,7 @@ if __name__ == "__main__":
                 block_size  += 1
         
         thresh = cv2.adaptiveThreshold(src, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY_INV, block_size, offset_val)
+        # writes blocksize and offset to image
         thresh = cv2.putText(thresh, f"Offset:{offset_val} || Block Size:{block_size}", (10, 20), font, 0.5, (0, 0, 0), 2)
         thresh = cv2.putText(thresh, f"Offset:{offset_val} || Block Size:{block_size}", (10, 20), font, 0.5, (255,255,255), 1)
         cv2.imshow(window_name, thresh)

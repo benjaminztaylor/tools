@@ -15,7 +15,13 @@ Simple OpenCV GUI for finding adaptive thresholding parameters (block_size and o
 - NumPy  == 1.19.2
 - OpenCV == 3.4.2
 
-### Use
+### Use 
 
-1.   Change `img_path_00` to path to image
-2.   From terminal -> `python sothresh.py`
+From the terminal:
+
+`python sothresh.py -i IMAGEPATH`
+
+Optional input parameters:
+
+-b: BLOCKSIZE: changes the maximum blocksize
+-o: OFFSET: changes the max offset

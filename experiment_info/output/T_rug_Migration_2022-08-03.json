@@ -2,5 +2,7 @@
     "date": "2022-08-03",
     "exp_type": "Migration",
     "species": "T.rugatulus",
-    "File Size (TB)": 15.48
+    "File Size (TB)": 15.48,
+    "Number camera": 6,
+    "Images per camera": 68794,
 }

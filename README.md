@@ -2,12 +2,13 @@
 
 ## Remove formatted text
 
-Copies and renames files in a new folder.
+Copies and renames files in a new folder. Uses a constant character in file name for renaming.
 
-use 1: run `python rmv_rname.py -i test_files/`
+**Use 1**: run in terminal: `python rmv_rname.py -i test_files/`
 
 Keeps everything starting with last character of breaking constant (here the constant is "_C").
-use 2: run `python rmv_rname.py -c "_C" -i test_files/`
+
+**Use 2**: run in terminal: `python rmv_rname.py -c "_C" -i test_files/`
 
 ## Move files (script)
 
